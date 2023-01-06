@@ -49,3 +49,9 @@ isPalindrome xs = let revList = reverseList xs in head revList == head xs && isP
 mid :: [a] -> [a]
 mid (x:xs) = tail $ reverseList xs
 mid [] = []
+
+-- Flatten recursively-nested lists
+data NestedList a = Elem a | List [NestedList a]
+
+flatten :: (NestedList l) => [l] -> [a]
+flatten (x:xs) = 
